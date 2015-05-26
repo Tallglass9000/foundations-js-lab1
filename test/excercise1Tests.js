@@ -6,11 +6,14 @@ var assert = require('chai').assert;
 var meerkatTalkOne = require('../lib/excercise1').meerkatTalkOne;
 var meerkatTalkTwo = require('../lib/excercise1').meerkatTalkTwo;
 
-describe('excercise 1', function() {
-  describe('#meerkatTalkOne()', function() {
+describe('#meerkatTalkOne()', function() {
+  it('Should return chirp chirp chirp when caled', function() {
     expect(meerkatTalkOne()).to.equal('chirp chirp chirp');
   });
-  describe('#meerkatTalkTwo()', function() {
+});
+
+describe('#meerkatTalkTwo()', function() {
+  it('Should return a string with nine chirps', function() {
     expect(meerkatTalkTwo()).to.equal('chirp chirp chirp chirp chirp chirp chirp chirp chirp');
   });
 });
