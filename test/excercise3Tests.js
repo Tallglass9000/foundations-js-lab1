@@ -16,15 +16,21 @@ describe('excercise 3', function() {
   };
 
   describe('#animalStats()', function() {
-    assert(_.isEqual(animalStats(), animalExhibitStats),
-      'animalExhibitStats value should not change'
-    );
+    it('must have the same values as when it was created', function() {
+      assert(_.isEqual(animalStats(), animalExhibitStats),
+        'animalExhibitStats value should not change'
+      );
+    });
   });
+
   describe('#animalIndexing()', function() {
-    animalExhibitStats.mostPopular = null;
-    animalExhibitStats.numberOpen = null;
-    assert(_.isEqual(animalIndexing(), animalExhibitStats),
-      'animalExhibitStats value should not change'
-    );
+    var stats_clone = _.clone(animalExhibitStats)
+    stats_clone.mostPopular = null;
+    stats_clone.numberOpen = null;
+    it('Should change the values of mostPopular and NumberOpen to null', function() {
+      assert(_.isEqual(animalIndexing(), stats_clone),
+        'mostPopular and numberOpen must be null, and other attributes must be left alone'
+      );
+    });
   });
 });
